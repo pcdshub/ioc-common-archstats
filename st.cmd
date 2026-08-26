@@ -4,9 +4,9 @@ PREFIX=ARCH:
 TOP="$(dirname "$0")"
 
 
-export ARCHIVER_URL=http://pscaa02.slac.stanford.edu:17665/mgmt/ui/index.html
+export ARCHIVER_URL=http://psctlws01.pcdsn:8329/mgmt/ui/index.html
 export ARCHSTATS_DATABASE=elastic
-export ARCHSTATS_DATABASE_URL=ctl-logsrv01:9200
+export ARCHSTATS_DATABASE_URL=http://ctl-logsrv01:9200
 
 export ARCHSTATS_INDEX_FORMAT="archiver-appliance-stats"
 export ARCHSTATS_INDEX_SUFFIX=""
