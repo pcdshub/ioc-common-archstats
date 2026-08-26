@@ -1,8 +1,11 @@
 #!/bin/bash
 
-conda create -p $PWD/conda_env python=3.7
-conda activate $PWD/conda_env
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENV_PATH="$SCRIPT_DIR/conda_env"
 
-pip install -r archstats/requirements.txt
+conda create -p "$ENV_PATH" python=3.7 -y
 
-cd archstats && pip install -e .
+conda run -p "$ENV_PATH" python -m pip install -r "$SCRIPT_DIR/archstats/requirements.txt"
+
+cd "$SCRIPT_DIR/archstats"
+conda run -p "$ENV_PATH" python -m pip install -e .
